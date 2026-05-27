@@ -207,6 +207,9 @@
 
       <ul class="hidden md:flex items-center gap-8 text-sm" role="list">
 
+        <li><a href="#employmenthistory"
+            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+            :class="s==='employmenthistory'?'on !text-zinc-900 dark:!text-white':''">Employment History</a></li>
         <li><a href="#work"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
             :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">Work</a></li>
@@ -266,6 +269,8 @@
       x-transition:leave-end="opacity-0 -translate-y-2"
       class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
       <ul class="flex flex-col px-6 py-5 gap-4 text-sm font-medium" role="list">
+        <li><a href="#employmenthistory" @click="mm=false"
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Employment History</a></li>
         <li><a href="#work" @click="mm=false"
             class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Work</a></li>
         <li><a href="#about" @click="mm=false"
@@ -353,24 +358,21 @@
     </section>
 
     <!-- ═══ SERVICES ═══ -->
-    <section id="services" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
+    <section id="employmenthistory" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
       <div class="max-w-6xl mx-auto px-6">
         <div class="mb-14">
           <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Employment History</p>
           <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Previous Emoployment</h2>
         </div>
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-2 gap-6">
 
           <article
             class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
             <div
-              class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-zinc-800 rounded-xl mb-6 group-hover:bg-accent/10 transition-colors">
-              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2" />
-              </svg>
+              class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-zinc-800 rounded-xl mb-6 group-hover:bg-accent/10 transition-colors overflow-hidden">
+              <img src="liaison_group_uk_logo.jpg" alt="Liaison Group logo" class="w-full h-full object-contain" loading="lazy">
             </div>
-            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Liaison Group</h3>
+            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Liaison Group <br> Jan 2018 - Mar 2026</h3>
             <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">From wireframes to polished Figma
               prototypes. Intuitive, visually compelling interfaces that convert visitors into users and put usability
               first.</p>
@@ -379,32 +381,14 @@
           <article
             class="reveal d2 card-h group bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
             <div
-              class="w-12 h-12 flex items-center justify-center bg-zinc-800 dark:bg-zinc-700 rounded-xl mb-6 group-hover:bg-accent/20 transition-colors">
-              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
+              class="w-12 h-12 flex items-center justify-center bg-zinc-800 dark:bg-zinc-700 rounded-xl mb-6 group-hover:bg-accent/20 transition-colors overflow-hidden">
+              <img src="dolphin_computer_access_logo.jpg" alt="Dolphin Computer Access logo" class="w-full h-full object-contain" loading="lazy">
             </div>
-            <h3 class="font-display font-bold text-xl text-white mb-3">Frontend Dev</h3>
+            <h3 class="font-display font-bold text-xl text-white mb-3">Dolphin Computer Access <br> Feb 2013 - Jan 2018</h3>
             <p class="text-sm text-zinc-400 leading-relaxed">Production-grade code with Tailwind CSS and Alpine.js.
               Pixel-perfect, fully responsive, SEO-friendly and blazing fast — no bloat, no heavy frameworks.</p>
           </article>
 
-          <article
-            class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-            <div
-              class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-zinc-800 rounded-xl mb-6 group-hover:bg-accent/10 transition-colors">
-              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
-              </svg>
-            </div>
-            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Landing Pages</h3>
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">High-converting pages for SaaS, apps and
-              personal brands. Designed to communicate value instantly and drive action from the first scroll.</p>
-          </article>
 
         </div>
       </div>
