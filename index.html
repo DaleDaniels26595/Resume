@@ -405,7 +405,7 @@
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
           <div>
             <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Examples of work</p>
-            <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Integration & QA projects</h2>
+            <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Integration & QA work</h2>
           </div>
           <a href="projects.html"
             class="reveal d1 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors self-start sm:self-auto nl">
@@ -415,7 +415,29 @@
 
         <div class="grid md:grid-cols-2 gap-6">
 
-          <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-2">
+          <article class="card-h reveal d4 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div class="pf w-full h-48">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80" alt="Website development" loading="lazy">
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">Web</span>
+                <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Frontend</span>
+              </div>
+              <a href="projects.html">
+                <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">I built this website</h3>
+              </a>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
+                Designed and developed this personal site to showcase portfolio work, experience, and contact details in a clean, responsive layout.
+              </p>
+              <a href="projects.html"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">
+                Learn more →
+              </a>
+            </div>
+          </article>
+
+          <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
             <div class="pf w-full h-64 md:h-80">
               <img src="PA-CRM.png" alt="Power Automate workflow" loading="lazy" class="object-contain">
             </div>
@@ -425,10 +447,10 @@
                 <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Business automation</span>
               </div>
               <a href="projects.html">
-                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">HR onboarding workflow automation</h3>
+                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">CRM system workflow automation</h3>
               </a>
               <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">
-                Built a Power Automate solution that reduced manual onboarding tasks by 70%, linking SharePoint, Teams, and Outlook.
+                Built a Power Automate workflow to sync CRM updates into the support system, improving data accuracy and saving the support team time.
               </p>
               <a href="projects.html"
                 class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">
@@ -481,6 +503,7 @@
             </div>
           </article>
 
+         
         </div>
       </div>
     </section>
@@ -503,7 +526,7 @@
               A bit about<br>who I am</h2>
             <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
               I enjoy working on solutions that simplify complex workflows and make systems communicate more
-              effectively. My background in QA stems from my problem-solving mindset, i have worked my way from finding the problems to being able to resolve the problems.
+              effectively. My background in QA stems from my problem-solving mindset, I have worked my way from finding the problems to being able to resolve the problems.
             <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
               Outside of work, I’m a big technology enthusiast. I spend a lot of my free time around computer gaming and
               PC hardware, whether that’s keeping up with new releases, improving my setup, or exploring how systems
@@ -782,7 +805,7 @@ is extremely helpful and open. Dale makes work fun, period. he's the kind of guy
         updateSection() {
           const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 60;
           if (atBottom) { this.s = 'contact'; return; }
-          const ids = ['contact', 'endorsements', 'about', 'work', 'services', 'hero'];
+          const ids = ['contact', 'endorsements', 'about', 'work', 'employmenthistory', 'hero'];
           for (const id of ids) {
             const el = document.getElementById(id);
             if (el && window.scrollY >= el.offsetTop - 130) { this.s = id; return; }
