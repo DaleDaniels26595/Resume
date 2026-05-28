@@ -72,8 +72,8 @@
     <section class="pt-36 pb-12 relative overflow-hidden">
       <div class="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
       <div class="max-w-6xl mx-auto px-6 relative z-10">
-        <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Portfolio</p>
-        <h1 class="reveal font-display font-bold text-5xl md:text-6xl text-zinc-900 dark:text-white leading-tight mb-4">All Projects</h1>
+        <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Examples of work</p>
+        <h1 class="reveal font-display font-bold text-5xl md:text-6xl text-zinc-900 dark:text-white leading-tight mb-4">Integration & QA</h1>
         <p class="reveal text-lg text-zinc-500 dark:text-zinc-400 max-w-xl leading-relaxed mb-8">A complete look at my work across UI/UX design, frontend development and landing pages.</p>
         <div class="reveal flex flex-wrap gap-2">
           <template x-for="f in filterOptions" :key="f.value">
@@ -170,23 +170,58 @@
         filter: 'all',
 
         filterOptions: [
-          { value: 'all',       label: 'All (9)' },
-          { value: 'saas',      label: 'SaaS' },
-          { value: 'landing',   label: 'Landing page' },
-          { value: 'agency',    label: 'Agency' },
-          { value: 'ecommerce', label: 'E-commerce' },
+          { value: 'all', label: 'All' },
+          { value: 'logicapps', label: 'Logic Apps' },
+          { value: 'powerautomate', label: 'Power Automate' },
+          { value: 'qa', label: 'QA' },
+          { value: 'automation', label: 'Automation' },
         ],
 
         allProjects: [
-          { id:1,  title:'Novu — SaaS Dashboard',  category:'saas',      categoryLabel:'SaaS',         tags:['SaaS','Figma','Tailwind'],           year:'2025', desc:'Complete redesign of a B2B notification platform. Reduced cognitive load by 40% and improved trial-to-paid conversion.',    img:'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&q=80',  url:'case-study.html' },
-          { id:2,  title:'Finlo — Fintech App',    category:'landing',   categoryLabel:'Landing page', tags:['Landing page','Fintech','Alpine.js'], year:'2024', desc:'Marketing site and onboarding flow for a personal finance app targeting young professionals.',                              img:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80', url:'case-study.html' },
-          { id:3,  title:'Orea — Creative Agency', category:'agency',    categoryLabel:'Agency',       tags:['Agency','Animation'],                year:'2024', desc:'Bold editorial site for a Paris-based branding studio. Scroll-driven animations and custom cursor.',                      img:'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=700&q=80', url:'case-study.html' },
-          { id:4,  title:'Vesta — Real Estate',    category:'landing',   categoryLabel:'Landing page', tags:['Landing page','Real Estate'],         year:'2024', desc:'Conversion-focused landing page for a proptech startup entering the French market.',                                      img:'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80',  url:'case-study.html' },
-          { id:5,  title:'Arkio — SaaS Analytics', category:'saas',      categoryLabel:'SaaS',         tags:['SaaS','Dashboard','Figma'],           year:'2024', desc:'Data visualisation dashboard for a B2B analytics platform. Designed for clarity at high data density.',                img:'https://images.unsplash.com/photo-1581472723648-909f4851d4ae?w=700&q=80', url:'case-study.html' },
-          { id:6,  title:'Bloom — E-commerce',     category:'ecommerce', categoryLabel:'E-commerce',   tags:['E-commerce','Shopify'],               year:'2023', desc:'Custom Shopify theme for a sustainable cosmetics brand. Mobile-first with high emphasis on product imagery.',           img:'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=700&q=80',  url:'case-study.html' },
-          { id:7,  title:'Mira — Health App',      category:'landing',   categoryLabel:'Landing page', tags:['Landing page','Health','Tailwind'],   year:'2023', desc:'App landing page for a mental wellness startup. Warm, accessible design with strong social proof.',                    img:'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80', url:'case-study.html' },
-          { id:8,  title:'Noto — Agency Rebrand',  category:'agency',    categoryLabel:'Agency',       tags:['Agency','Rebrand'],                  year:'2023', desc:'Full rebrand and website for a digital communications agency in Lyon.',                                                img:'https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80', url:'case-study.html' },
-          { id:9,  title:'Kova — E-commerce',      category:'ecommerce', categoryLabel:'E-commerce',   tags:['E-commerce','Figma'],                year:'2023', desc:'Product page redesign and checkout optimisation for a DTC furniture brand. Reduced cart abandonment by 18%.',         img:'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80',  url:'case-study.html' },
+          {
+            id: 1,
+            title: 'HR onboarding workflow automation',
+            category: 'powerautomate',
+            categoryLabel: 'Power Automate',
+            tags: ['Power Automate', 'Teams', 'SharePoint'],
+            year: '2025',
+            desc: 'Built a Power Automate solution that reduced manual onboarding tasks by 70%, connecting SharePoint, Outlook, and Teams.',
+            img: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&q=80',
+            url: 'projects.html'
+          },
+          {
+            id: 2,
+            title: 'Invoice processing with Azure Logic Apps',
+            category: 'logicapps',
+            categoryLabel: 'Logic Apps',
+            tags: ['Logic Apps', 'Azure', 'API'],
+            year: '2024',
+            desc: 'Designed a Logic Apps pipeline for invoice ingestion, validation, and team notifications with automated retry handling.',
+            img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80',
+            url: 'projects.html'
+          },
+          {
+            id: 3,
+            title: 'QA test automation for integration releases',
+            category: 'qa',
+            categoryLabel: 'QA',
+            tags: ['QA', 'Test automation', 'Jira'],
+            year: '2024',
+            desc: 'Led QA for integration deployments, created regression suites, and reduced post-release defects by over 40%.',
+            img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=700&q=80',
+            url: 'projects.html'
+          },
+          {
+            id: 4,
+            title: 'End-to-end business process automation',
+            category: 'automation',
+            categoryLabel: 'Automation',
+            tags: ['Automation', 'Flow', 'Monitoring'],
+            year: '2024',
+            desc: 'Delivered a cross-system automation solution that linked CRM, ERP, and email alerts for a finance team.',
+            img: 'https://images.unsplash.com/photo-1581472723648-909f4851d4ae?w=700&q=80',
+            url: 'projects.html'
+          },
         ],
 
         get visibleCount() {
