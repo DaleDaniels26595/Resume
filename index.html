@@ -211,6 +211,9 @@
         <li><a href="#employmenthistory"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
             :class="s==='employmenthistory'?'on !text-zinc-900 dark:!text-white':''">Employment History</a></li>
+        <li><a href="#education"
+            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
+            :class="s==='education'?'on !text-zinc-900 dark:!text-white':''">Education</a></li>
         <li><a href="#work"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
             :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">Work</a></li>
@@ -269,6 +272,8 @@
       <ul class="flex flex-col px-6 py-5 gap-4 text-sm font-medium" role="list">
         <li><a href="#employmenthistory" @click="mm=false"
             class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Employment History</a></li>
+        <li><a href="#education" @click="mm=false"
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Education</a></li>
         <li><a href="#work" @click="mm=false"
             class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Work</a></li>
         <li><a href="#about" @click="mm=false"
@@ -369,7 +374,7 @@
               <img src="liaison_group_uk_logo.jpg" alt="Liaison Group logo" class="w-full h-full object-contain" loading="lazy">
             </div>
             <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Liaison Group <br> Jan 2018 - Mar 2026</h3>
-            <p class="text-sm text-zinc-900 dark:text-white leading-relaxed">
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
               <b>Cloud Integration Engineer - Jan 2022 - Mar 2026</b><br>
               Developed and maintained automated workflows using Microsoft Power Automate and Azure LogicApps, streamlining business processes and improving efficiency across various departments. Supporting integrated solutions with occasional C#/.Net development where custom functionality was needed.<br><br>
 
@@ -385,7 +390,7 @@
               <img src="dolphin_computer_access_logo.jpg" alt="Dolphin Computer Access logo" class="w-full h-full object-contain" loading="lazy">
             </div>
             <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Dolphin Computer Access <br> Feb 2013 - Jan 2018</h3>
-            <p class="text-sm text-zinc-900 dark:text-white leading-relaxed">
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
               <b>Test Analyst - Oct 2014 - Jan 2018</b><br>
               Conducted comprehensive testing of accessibility software applications, ensuring quality and performance standards. Documented test results and reported issues to development teams for resolution.
             <br><br>
@@ -399,8 +404,69 @@
       </div>
     </section>
 
+    <!-- ═══ EDUCATION ═══ -->
+    <section id="education" class="py-24 bg-white dark:bg-zinc-950">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-14">
+          <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Education & Certifications</p>
+          <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Education and certifications</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <article
+            class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+            <div
+              class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-zinc-800 rounded-xl mb-6 transition-colors overflow-hidden">
+              <span class="text-sm font-semibold text-zinc-900 dark:text-white">DSHS</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Droitwich Spa High School</h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Completed secondary education with a strong foundation in IT. Developed practical digital skills and problem-solving experience that supports ongoing technical work.
+            </p>
+          </article>
+
+          <article
+            class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+            <div
+              class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-zinc-800 rounded-xl mb-6 transition-colors overflow-hidden">
+              <span class="text-sm font-semibold text-zinc-900 dark:text-white">TDM</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Apprenticeships</h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Completed Level 2, Level 3 and Level 4 IT apprenticeships with The Development Manager, gaining hands-on experience in support, systems administration, and practical IT delivery.
+            </p>
+          </article>
+
+          <article
+            class="reveal d2 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+            <div
+              class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-zinc-800 rounded-xl mb-6 transition-colors overflow-hidden">
+              <span class="text-sm font-semibold text-zinc-900 dark:text-white">A+</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">CompTIA A+ essentials</h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Certified in CompTIA A+ essentials, demonstrating competence in hardware, software, troubleshooting, and professional IT support practices.
+            </p>
+          </article>
+
+          <article
+            class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent transition-colors">
+            <div
+              class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-zinc-800 rounded-xl mb-6 transition-colors overflow-hidden">
+              <span class="text-sm font-semibold text-zinc-900 dark:text-white">A11Y</span>
+            </div>
+            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Digital Accessibility</h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Completed training in “Enabling Participation In The Information Society,” reinforcing inclusive digital design and accessibility awareness.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
     <!-- ═══ WORK ═══ -->
-    <section id="work" class="py-24">
+    <section id="work" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
       <div class="max-w-6xl mx-auto px-6">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
           <div>
@@ -509,7 +575,7 @@
     </section>
 
     <!-- ═══ ABOUT ═══ -->
-    <section id="about" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
+    <section id="about" class="py-24 bg-white dark:bg-zinc-950">
       <div class="max-w-6xl mx-auto px-6">
         <div class="grid md:grid-cols-2 gap-16 items-center">
 
@@ -566,7 +632,7 @@
     </section>
 
     <!-- ═══ TESTIMONIALS ═══ -->
-    <section id="endorsements" class="py-24">
+    <section id="endorsements" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
       <div class="max-w-6xl mx-auto px-6">
         <div class="mb-14">
           <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Endorsements</p>
@@ -595,7 +661,7 @@ is extremely helpful and open. Dale makes work fun, period. he's the kind of guy
     </section>
 
     <!-- ═══ CONTACT ═══ -->
-    <section id="contact" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
+    <section id="contact" class="py-24 bg-white dark:bg-zinc-950">
       <div class="max-w-6xl mx-auto px-6">
         <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-16 relative overflow-hidden">
           <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none"
@@ -784,7 +850,7 @@ is extremely helpful and open. Dale makes work fun, period. he's the kind of guy
         updateSection() {
           const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 60;
           if (atBottom) { this.s = 'contact'; return; }
-          const ids = ['contact', 'endorsements', 'about', 'work', 'employmenthistory', 'hero'];
+          const ids = ['contact', 'endorsements', 'about', 'work', 'education', 'employmenthistory', 'hero'];
           for (const id of ids) {
             const el = document.getElementById(id);
             if (el && window.scrollY >= el.offsetTop - 130) { this.s = id; return; }
