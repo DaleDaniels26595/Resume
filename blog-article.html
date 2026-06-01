@@ -31,7 +31,7 @@
     .btn-primary:hover::after{left:160%;}
     [x-cloak]{display:none!important;}
     .photo-frame{position:relative;overflow:hidden;background:#e4e4e7;}
-    .photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+    .photo-frame img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;}
 
     /* Article typography */
     .prose-article h2{font-family:'PT Sans',sans-serif;font-size:1.6rem;font-weight:700;color:inherit;margin:2.5rem 0 1rem;line-height:1.25;}
@@ -144,7 +144,7 @@
 
       <!-- Hero image -->
       <div class="max-w-4xl mx-auto px-6 mb-12">
-        <div class="photo-frame w-full h-72 md:h-96 rounded-2xl">
+        <div class="photo-frame w-full aspect-[16/9] rounded-2xl">
           <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80" alt="Code editor with CSS" loading="lazy"/>
         </div>
       </div>

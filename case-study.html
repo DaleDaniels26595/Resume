@@ -50,7 +50,7 @@
     .btn-primary:hover::after{left:160%;}
     [x-cloak]{display:none!important;}
     .photo-frame{position:relative;overflow:hidden;background:#e4e4e7;}
-    .photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+    .photo-frame img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;}
 
     /* Reading progress */
     .progress-bar{position:fixed;top:0;left:0;height:3px;background:#FF6B2B;z-index:100;transition:width .1s linear;}
@@ -243,7 +243,7 @@
 
       <!-- Full-width image -->
       <div class="max-w-5xl mx-auto px-6 mb-4">
-        <div class="reveal photo-frame w-full h-56 md:h-80 rounded-2xl">
+        <div class="reveal photo-frame w-full aspect-[4/3] rounded-2xl">
           <img src="https://images.unsplash.com/photo-1581472723648-909f4851d4ae?w=1200&q=80" alt="Existing dashboard audit — heuristic violations mapped" loading="lazy"/>
         </div>
         <p class="img-caption">Existing dashboard with heuristic violations annotated during the audit phase.</p>
@@ -335,7 +335,7 @@
 
       <!-- Second full-width image -->
       <div class="max-w-5xl mx-auto px-6 mb-4">
-        <div class="reveal photo-frame w-full h-56 md:h-80 rounded-2xl">
+        <div class="reveal photo-frame w-full aspect-[4/3] rounded-2xl">
           <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80" alt="High-fidelity Figma screens — new dashboard layout" loading="lazy"/>
         </div>
         <p class="img-caption">Final hi-fi screens showing the redesigned sidebar, dashboard home, and notification workflow builder.</p>
