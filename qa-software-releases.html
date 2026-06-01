@@ -34,7 +34,7 @@
     .nav-link:hover::after{width:100%;}
     [x-cloak]{display:none!important;}
     .photo-frame{position:relative;overflow:hidden;background:#e4e4e7;}
-    .photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+    .photo-frame img{width:100%;height:100%;object-fit:contain;display:block;}
   </style>
 </head>
 
@@ -45,10 +45,12 @@
         <span class="text-accent">Dale</span>
       </a>
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <li><a href="index.html#employmenthistory" class="nav-link text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white">Employment</a></li>
-        <li><a href="index.html#education" class="nav-link text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white">Education</a></li>
-        <li><a href="index.html#work" class="nav-link text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white">Work</a></li>
-        <li><a href="index.html#contact" class="nav-link text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white">Contact</a></li>
+        <li><a href="index.html#employmenthistory" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Employment History</a></li>
+        <li><a href="index.html#education" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Education</a></li>
+        <li><a href="index.html#work" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Work</a></li>
+        <li><a href="index.html#about" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
+        <li><a href="index.html#endorsements" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Endorsements</a></li>
+        <li><a href="index.html#contact" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
       </ul>
       <div class="flex items-center gap-3">
         <button @click="dark=!dark" class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors" :aria-label="dark ? 'Light mode' : 'Dark mode'">
@@ -75,27 +77,58 @@
           <img src="QA.png" alt="QA testing" loading="lazy" />
         </div>
         <div class="space-y-8 text-zinc-600 dark:text-zinc-300">
-          <p>This page describes the QA effort around software releases, with a focus on planning, execution, and defect triage to maintain delivery quality.</p>
-          <p>The process included structured regression testing, stakeholder reviews, and close collaboration with developers to catch issues early.</p>
+          <p>I led quality assurance activities across multi-release delivery cycles, owning test planning, maintenance of the regression pack, test execution, and defect lifecycle management. The work combined structured regression testing, targeted feature verification, exploratory testing, and co-ordinated UAT with stakeholders.</p>
+
+          <div class="rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 p-6">
+            <h2 class="font-display font-semibold text-zinc-900 dark:text-white mb-3">Regression test pack (Liaison Group)</h2>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-3">At Liaison Group regression testing was managed through an Excel-style regression test pack. This pack was the single source of truth for regression coverage across builds and contained canonical test cases, execution history, and pass/fail annotations.</p>
+            <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <li><strong>Structure:</strong> rows for each test case, columns for ID, feature area, preconditions, steps, expected result, last run date, result (Pass/Fail/Blocked), tester notes, and linked Azure DevOps work item ID where required.</li>
+              <li><strong>Maintenance:</strong> I kept the pack current after each sprint—adding new test cases for features, flagging flaky cases, and retiring obsolete scenarios.</li>
+              <li><strong>Execution:</strong> test runs were recorded in the sheet during cycles, with evidence links (screenshots / logs) and notes captured for reproducibility and regression trend analysis.</li>
+            </ul>
+          </div>
+
+          <div class="rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 p-6">
+            <h2 class="font-display font-semibold text-zinc-900 dark:text-white mb-3">Test execution & Azure DevOps</h2>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-3">Test execution was coordinated via the regression pack and tracked as work items in Azure DevOps for traceability. Defects were filed with detailed repro steps, environment, severity, and linked back to the test case ID in the Excel pack.</p>
+            <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <li><strong>Defect lifecycle:</strong> Create → Triage (with dev and product) → Assign → Fix verification → Close. I owned triage sessions and assisted the product owners to prioritize fixes based on business impact and release risk.</li>
+              <li><strong>Traceability:</strong> Each defect linked to the related Azure DevOps user story/PR and the regression test case ID so we could prove coverage for release notes and audits.</li>
+            </ul>
+          </div>
+
           <div class="grid gap-6 md:grid-cols-2">
             <div class="rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 p-6">
-              <h2 class="font-display font-semibold text-zinc-900 dark:text-white mb-3">Approach</h2>
+              <h2 class="font-display font-semibold text-zinc-900 dark:text-white mb-3">Feature testing & exploratory</h2>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-2">For new features I created focused test charters and performed exploratory testing across adjacent areas to uncover integration regressions not covered by scripted cases.</p>
               <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-                <li>Release test planning</li>
-                <li>Regression suite coverage</li>
-                <li>Defect triage and reporting</li>
+                <li><strong>Charters:</strong> short, mission-led sessions (e.g., "verify timesheet calculations are correct with multiple shift times") with time-boxed exploration and note capture.</li>
+                <li><strong>Boundary checks:</strong> I deliberately tested surrounding modules (related UI, APIs, data import/export flows) to catch cross-cutting defects.</li>
+                <li><strong>Session notes:</strong> documented findings, severity, and reproduction steps; converted serious findings into Azure DevOps bugs immediately.</li>
               </ul>
             </div>
+
             <div class="rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 p-6">
-              <h2 class="font-display font-semibold text-zinc-900 dark:text-white mb-3">Results</h2>
+              <h2 class="font-display font-semibold text-zinc-900 dark:text-white mb-3">UAT & stakeholder coordination</h2>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-2">I ran and coordinated UAT cycles with product owners and operational stakeholders, preparing test scenarios that mirrored real-world workflows used by NHS customers.</p>
               <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-                <li>Reduced release defects</li>
-                <li>Faster issue identification</li>
-                <li>Clear testing handoffs</li>
+                <li><strong>Test packs for UAT:</strong> trimmed, user-focused scenarios with acceptance criteria and clear pass/fail definitions for stakeholder sign-off.</li>
+                <li><strong>Sign-off process:</strong> tracked UAT outcomes in Azure DevOps, captured stakeholder approval, and recorded any post-UAT actions as backlog items.</li>
+                <li><strong>Training & handover:</strong> supplied runbooks and known-issues lists to operations to ease release rollout.</li>
               </ul>
             </div>
           </div>
-          <p>This page can be expanded with specific tools, metrics, and the exact release cadence used for the QA work.</p>
+
+          <div class="rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 p-6">
+            <h2 class="font-display font-semibold text-zinc-900 dark:text-white mb-3">Metrics & outcomes</h2>
+            <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <li>Maintained regression pass-rates per build and reported trendlines to the team.</li>
+              <li>Reduced post-release defects by capturing integration regressions early via the Excel pack.</li>
+              <li>Faster triage and resolution due to precise reproduction steps and direct links between tests, defects and work items.</li>
+            </ul>
+          </div>
+
           <a href="index.html#work" class="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-light">Back to featured work →</a>
         </div>
       </div>

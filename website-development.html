@@ -34,7 +34,7 @@
     .nav-link:hover::after{width:100%;}
     [x-cloak]{display:none!important;}
     .photo-frame{position:relative;overflow:hidden;background:#e4e4e7;}
-    .photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+    .photo-frame img{width:100%;height:100%;object-fit:contain;display:block;}
   </style>
 </head>
 
@@ -45,10 +45,12 @@
         <span class="text-accent">Dale</span>
       </a>
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <li><a href="index.html#employmenthistory" class="nav-link text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white">Employment</a></li>
-        <li><a href="index.html#education" class="nav-link text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white">Education</a></li>
-        <li><a href="index.html#work" class="nav-link text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white">Work</a></li>
-        <li><a href="index.html#contact" class="nav-link text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white">Contact</a></li>
+        <li><a href="index.html#employmenthistory" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Employment History</a></li>
+        <li><a href="index.html#education" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Education</a></li>
+        <li><a href="index.html#work" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Work</a></li>
+        <li><a href="index.html#about" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
+        <li><a href="index.html#endorsements" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Endorsements</a></li>
+        <li><a href="index.html#contact" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
       </ul>
       <div class="flex items-center gap-3">
         <button @click="dark=!dark" class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors" :aria-label="dark ? 'Light mode' : 'Dark mode'">
@@ -76,7 +78,10 @@
         </div>
         <div class="space-y-8 text-zinc-600 dark:text-zinc-300">
           <p>The homepage and featured project cards were built using Tailwind CSS and a clean, responsive layout that works on desktop and mobile. The site is designed to feel modern while keeping accessibility and readability front of mind.</p>
-          <p>The goal was to create a personal website that functions as both a portfolio and a CV, with clear sections for work, employment history, education, endorsements, and contact information. It was important that the site loads quickly and works well on all screen sizes.</p>
+          <p>The goal was to create a personal website that functions as both a portfolio and a CV, with clear sections for work, employment history, education, endorsements, and contact information. It was important that the site loads quickly and works well on all screen sizes and works in both light and dark modes.</p>
+          <p>Alpine.js is used for the dark mode toggle, which respects the user's system preference and saves their choice for future visits. The design uses a simple color palette with an accent color to highlight important elements and calls to action.</p>
+          <p>Overall, this project was a fun opportunity to apply front-end development skills to create a personal website that effectively communicates my experience and projects while also demonstrating attention to detail in design and user experience.</p>
+          </p>
           <div class="grid gap-6 md:grid-cols-2">
             <div class="rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 p-6">
               <h2 class="font-display font-semibold text-zinc-900 dark:text-white mb-3">Key features</h2>
@@ -95,7 +100,7 @@
               </ul>
             </div>
           </div>
-          <p>This page is a starting point for the website build. More details can be added later about the design decisions, accessibility improvements, and optimization techniques used across the site.</p>
+</p>
           <a href="index.html#work" class="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-light">Back to featured work →</a>
         </div>
       </div>

@@ -34,7 +34,7 @@
     .nav-link:hover::after{width:100%;}
     [x-cloak]{display:none!important;}
     .photo-frame{position:relative;overflow:hidden;background:#e4e4e7;}
-    .photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+    .photo-frame img{width:100%;height:100%;object-fit:contain;display:block;}
   </style>
 </head>
 
@@ -45,10 +45,12 @@
         <span class="text-accent">Dale</span>
       </a>
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <li><a href="index.html#employmenthistory" class="nav-link text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white">Employment</a></li>
-        <li><a href="index.html#education" class="nav-link text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white">Education</a></li>
-        <li><a href="index.html#work" class="nav-link text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white">Work</a></li>
-        <li><a href="index.html#contact" class="nav-link text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white">Contact</a></li>
+        <li><a href="index.html#employmenthistory" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Employment History</a></li>
+        <li><a href="index.html#education" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Education</a></li>
+        <li><a href="index.html#work" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Work</a></li>
+        <li><a href="index.html#about" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
+        <li><a href="index.html#endorsements" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Endorsements</a></li>
+        <li><a href="index.html#contact" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
       </ul>
       <div class="flex items-center gap-3">
         <button @click="dark=!dark" class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors" :aria-label="dark ? 'Light mode' : 'Dark mode'">
@@ -75,27 +77,28 @@
           <img src="LogicApp.png" alt="Logic Apps integration" loading="lazy" />
         </div>
         <div class="space-y-8 text-zinc-600 dark:text-zinc-300">
-          <p>This work focused on connecting systems through Azure Logic Apps, with robust workflow handling for messages, retries, and success/failure notifications.</p>
-          <p>The solution was designed to be resilient, ensuring that business events triggered consistent downstream processing while keeping teams informed of any exceptions.</p>
-          <div class="grid gap-6 md:grid-cols-2">
-            <div class="rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 p-6">
-              <h2 class="font-display font-semibold text-zinc-900 dark:text-white mb-3">What it delivered</h2>
-              <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-                <li>System-to-system orchestration</li>
-                <li>Error handling and notifications</li>
-                <li>Optimized message processing</li>
-              </ul>
-            </div>
-            <div class="rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 p-6">
-              <h2 class="font-display font-semibold text-zinc-900 dark:text-white mb-3">Technologies</h2>
-              <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-                <li>Azure Logic Apps</li>
-                <li>Event-based orchestration</li>
-                <li>Monitoring & retries</li>
-              </ul>
-            </div>
+          <p>This project delivered an Azure Logic Apps integration for a company supporting NHS shift-fill operations. It connected the rostering system (System A) with the temporary staffing booking platform (System B) through a Service Bus queue, enabling event-driven synchronization of shift and candidate data.</p>
+          <p>When System A outsourced a vacant shift, it published a message to Service Bus. The Logic App picked that vacancy event up, transformed the shift payload to System B's expected schema, and sent the full shift details across so the temporary staffing system could source and assign candidates.</p>
+          <p>A mirrored return path was built for candidate assignment. Once System B filled the shift, it posted a completed shift event back to Service Bus. The Logic App then consumed that event, mapped the candidate details, and updated System A so the rostering system remained in sync with the filled shift status.</p>
+          <div class="rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 p-6">
+            <h2 class="font-display font-semibold text-zinc-900 dark:text-white mb-3">How the workflow worked</h2>
+            <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <li><strong>Vacancy event:</strong> System A emits a message when a shift becomes vacant.</li>
+              <li><strong>Logic App trigger:</strong> the Logic App listens on Service Bus, validates the message, and maps it to System B's contract.</li>
+              <li><strong>Shift delivery:</strong> the message is forwarded to System B with role, location, time, and NHS-specific shift metadata.</li>
+              <li><strong>Candidate update:</strong> when System B fills the shift, it emits a return event with candidate information.</li>
+              <li><strong>Roster synchronization:</strong> the Logic App processes the return event and updates System A with candidate details and assignment confirmation.</li>
+            </ul>
           </div>
-          <p>More detail can be added later about the integration points, how the Logic App was structured, and the business rules that enabled the workflow to remain stable.</p>
+          <div class="rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 p-6">
+            <h2 class="font-display font-semibold text-zinc-900 dark:text-white mb-3">Business value</h2>
+            <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <li>Removed manual handoffs between rostering and temporary staff booking systems.</li>
+              <li>Reduced data entry errors by passing structured shift and candidate payloads automatically.</li>
+              <li>Improved speed of filling NHS vacancies by streamlining event delivery.</li>
+              <li>Ensured both systems remained aligned through a resilient two-way sync process.</li>
+            </ul>
+          </div>
           <a href="index.html#work" class="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-light">Back to featured work →</a>
         </div>
       </div>

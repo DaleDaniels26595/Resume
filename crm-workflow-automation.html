@@ -34,7 +34,7 @@
     .nav-link:hover::after{width:100%;}
     [x-cloak]{display:none!important;}
     .photo-frame{position:relative;overflow:hidden;background:#e4e4e7;}
-    .photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+    .photo-frame img{width:100%;height:100%;object-fit:contain;display:block;}
   </style>
 </head>
 
@@ -45,10 +45,12 @@
         <span class="text-accent">Dale</span>
       </a>
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <li><a href="index.html#employmenthistory" class="nav-link text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white">Employment</a></li>
-        <li><a href="index.html#education" class="nav-link text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white">Education</a></li>
-        <li><a href="index.html#work" class="nav-link text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white">Work</a></li>
-        <li><a href="index.html#contact" class="nav-link text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white">Contact</a></li>
+        <li><a href="index.html#employmenthistory" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Employment History</a></li>
+        <li><a href="index.html#education" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Education</a></li>
+        <li><a href="index.html#work" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Work</a></li>
+        <li><a href="index.html#about" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
+        <li><a href="index.html#endorsements" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Endorsements</a></li>
+        <li><a href="index.html#contact" class="nav-link text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Contact</a></li>
       </ul>
       <div class="flex items-center gap-3">
         <button @click="dark=!dark" class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors" :aria-label="dark ? 'Light mode' : 'Dark mode'">
@@ -75,8 +77,10 @@
           <img src="PA-CRM.png" alt="Power Automate workflow" loading="lazy" />
         </div>
         <div class="space-y-8 text-zinc-600 dark:text-zinc-300">
-          <p>The project automated CRM updates into the support system using Power Automate, ensuring the support desk always had the latest customer information without manual copy and paste work.</p>
-          <p>By creating a managed workflow, the solution reduced data entry errors, improved response times, and allowed the team to rely on a single source of truth.</p>
+          <p>For this I automated CRM updates into the support system using Power Automate, ensuring the support desk always had the latest customer information without manual copy and paste work.</p>
+          <p>The original workflow was run on a trigger of changes to a table within the Dynamics 365 CRM system. Whenever a change was detected it would pass this information onto the support system.</p>
+          <p>Once this had been implemented, the team could focus on higher-value tasks rather than routine data entry. After enough updates, it became clear that there would be less need for the workflow to constantly be looking for updates in the CRM table. Thus i changed the trigger to a set schedule. Every Sunday it would pull the latest set of data and then update the support system with those changes, so that the Support Team had the latest information on hand when they started the week.</p>
+          <p>By creating this workflow, the solution reduced data entry errors and allowed the team to rely on a single source of truth.</p>
           <div class="grid gap-6 md:grid-cols-2">
             <div class="rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 p-6">
               <h2 class="font-display font-semibold text-zinc-900 dark:text-white mb-3">Project focus</h2>
@@ -95,7 +99,6 @@
               </ul>
             </div>
           </div>
-          <p>This project is ready for further detail on the exact steps, approvals, and monitoring used to keep the workflow stable and reliable.</p>
           <a href="index.html#work" class="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-light">Back to featured work →</a>
         </div>
       </div>
