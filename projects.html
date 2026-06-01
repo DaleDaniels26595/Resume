@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects — Eliott</title>
+  <title>Work — Dale</title>
+  <meta name="description" content="Dale's featured projects in automation, Azure Logic Apps, Power Automate, and quality assurance."/>
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet"/>
@@ -36,10 +37,11 @@
     :class="scrolled?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':'bg-transparent'">
     <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="index.html" class="font-display font-bold text-xl tracking-tight z-10">
-        <span class="text-zinc-900 dark:text-white">eli</span><span class="text-accent">ott</span>
+        <span class="text-accent">Dale</span>
       </a>
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <li><a href="index.html#services" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Services</a></li>
+        <li><a href="index.html#employmenthistory" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Employment</a></li>
+        <li><a href="index.html#education" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Education</a></li>
         <li><a href="projects.html" class="nav-link text-accent font-medium">Work</a></li>
         <li><a href="index.html#about" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">About</a></li>
         <li><a href="blog.html" class="nav-link text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors">Blog</a></li>
@@ -59,7 +61,8 @@
     </nav>
     <div x-show="mobileMenu" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
       <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
-        <li><a href="index.html#services" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Services</a></li>
+        <li><a href="index.html#employmenthistory" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Employment</a></li>
+        <li><a href="index.html#education" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Education</a></li>
         <li><a href="projects.html" class="block text-accent font-medium">Work</a></li>
         <li><a href="index.html#about" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">About</a></li>
         <li><a href="blog.html" @click="mobileMenu=false" class="block text-zinc-700 dark:text-zinc-300">Blog</a></li>
@@ -72,9 +75,9 @@
     <section class="pt-36 pb-12 relative overflow-hidden">
       <div class="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
       <div class="max-w-6xl mx-auto px-6 relative z-10">
-        <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Examples of work</p>
-        <h1 class="reveal font-display font-bold text-5xl md:text-6xl text-zinc-900 dark:text-white leading-tight mb-4">Integration & QA</h1>
-        <p class="reveal text-lg text-zinc-500 dark:text-zinc-400 max-w-xl leading-relaxed mb-8">A complete look at my work across UI/UX design, frontend development and landing pages.</p>
+        <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">An overview of my work</p>
+        <h1 class="reveal font-display font-bold text-5xl md:text-6xl text-zinc-900 dark:text-white leading-tight mb-4">All work</h1>
+        <p class="reveal text-lg text-zinc-500 dark:text-zinc-400 max-w-xl leading-relaxed mb-8">A complete look at my work across automation, system integration, and quality assurance.</p>
         <div class="reveal flex flex-wrap gap-2">
           <template x-for="f in filterOptions" :key="f.value">
             <button
@@ -123,9 +126,8 @@
                     <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors" x-text="p.title"></h3>
                   </a>
                   <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4" x-text="p.desc"></p>
-                  <div class="flex items-center justify-between">
+                  <div class="flex items-center">
                     <a :href="p.url" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nav-link">View project →</a>
-                    <span class="text-xs text-zinc-400" x-text="p.year"></span>
                   </div>
                 </div>
               </article>
@@ -140,14 +142,48 @@
 
     <section class="pb-24">
       <div class="max-w-6xl mx-auto px-6">
-        <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-14 text-center relative overflow-hidden">
+        <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-16 relative overflow-hidden">
           <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none"></div>
           <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none"></div>
-          <div class="relative z-10">
-            <p class="text-xs font-medium text-accent tracking-widest uppercase mb-4">Ready to start?</p>
-            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-4">Want your project here?</h2>
-            <p class="text-zinc-400 max-w-md mx-auto mb-8">I'm available for new projects. Tell me about what you're building and let's see if we're a good fit.</p>
-            <a href="index.html#contact" class="inline-flex items-center gap-2 btn-primary bg-accent text-white font-medium px-8 py-3.5 rounded-full hover:bg-accent-light transition-colors">Start a project &rarr;</a>
+
+          <div class="relative z-10 grid md:grid-cols-2 gap-12 items-start">
+
+            <div>
+              <p class="text-xs font-medium text-accent tracking-widest uppercase mb-3">Get in touch</p>
+              <h2 class="font-display font-bold text-4xl md:text-5xl text-white leading-tight mb-5">Let's work<br>together</h2>
+              <p class="text-zinc-400 leading-relaxed mb-8">I'm open to cloud engineer, .net and QA designated roles.</p>
+
+              <div class="flex flex-col gap-4">
+                <a href="mailto:daledaniels@live.com" class="group flex items-center gap-3 text-zinc-400 hover:text-white transition-colors">
+                  <span class="w-9 h-9 flex items-center justify-center bg-zinc-800 rounded-lg group-hover:bg-accent/20 transition-colors shrink-0">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 0 12.22 0L21 8M5 19h14a2 2 0 0 02-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 02 2z" />
+                    </svg>
+                  </span>
+                  <span class="text-sm">daledaniels@live.com</span>
+                </a>
+                <a href="https://linkedin.com/in/Dale-Daniels" rel="noopener noreferrer" target="_blank" class="group flex items-center gap-3 text-zinc-400 hover:text-white transition-colors">
+                  <span class="w-9 h-9 flex items-center justify-center bg-zinc-800 rounded-lg group-hover:bg-accent/20 transition-colors shrink-0">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                  </span>
+                  <span class="text-sm">linkedin.com/in/Dale-Daniels</span>
+                </a>
+                <a href="tel:07480650657" class="group flex items-center gap-3 text-zinc-400 hover:text-white transition-colors">
+                  <span class="w-9 h-9 flex items-center justify-center bg-zinc-800 rounded-lg group-hover:bg-accent/20 transition-colors shrink-0">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72c.12 1.12.37 2.21.74 3.24a2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 6 6l1.85-1.85a2 2 0 0 1 2.11-.45c1.03.37 2.12.62 3.24.74A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                  </span>
+                  <span class="text-sm">07480650657</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="reveal d2">
+              <a href="index.html#contact" class="inline-flex items-center gap-2 btn-primary bg-accent text-white font-medium px-8 py-3.5 rounded-full hover:bg-accent-light transition-colors">Contact me &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
@@ -156,7 +192,7 @@
 
   <footer class="border-t border-zinc-100 dark:border-zinc-900">
     <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-zinc-400">&copy; <span id="year"></span> Eliott. All rights reserved.</p>
+      <p class="text-sm text-zinc-400">&copy; <span id="year"></span> Dale. All rights reserved.</p>
       <p class="text-xs text-zinc-500">Built with Tailwind CSS &amp; Alpine.js</p>
     </div>
   </footer>
@@ -171,56 +207,56 @@
 
         filterOptions: [
           { value: 'all', label: 'All' },
-          { value: 'logicapps', label: 'Logic Apps' },
+          { value: 'web', label: 'Web' },
           { value: 'powerautomate', label: 'Power Automate' },
+          { value: 'logicapps', label: 'Logic Apps' },
           { value: 'qa', label: 'QA' },
-          { value: 'automation', label: 'Automation' },
         ],
 
         allProjects: [
           {
             id: 1,
-            title: 'HR onboarding workflow automation',
-            category: 'powerautomate',
-            categoryLabel: 'Power Automate',
-            tags: ['Power Automate', 'Teams', 'SharePoint'],
-            year: '2025',
-            desc: 'Built a Power Automate solution that reduced manual onboarding tasks by 70%, connecting SharePoint, Outlook, and Teams.',
-            img: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&q=80',
-            url: 'projects.html'
+            title: 'I built this website!',
+            category: 'web',
+            categoryLabel: 'Web',
+            tags: ['Web', 'Frontend'],
+            year: '2026',
+            desc: 'Using a free HTML Template, Visual Studio Code and github, I designed and developed this personal site to act as a digital CV, explaining work, experience, and contact details in a clean, responsive layout.',
+            img: 'Website.png',
+            url: 'website-development.html'
           },
           {
             id: 2,
-            title: 'Invoice processing with Azure Logic Apps',
-            category: 'logicapps',
-            categoryLabel: 'Logic Apps',
-            tags: ['Logic Apps', 'Azure', 'API'],
+            title: 'CRM system workflow automation',
+            category: 'powerautomate',
+            categoryLabel: 'Power Automate',
+            tags: ['Power Automate', 'CRM', 'Automation'],
             year: '2024',
-            desc: 'Designed a Logic Apps pipeline for invoice ingestion, validation, and team notifications with automated retry handling.',
-            img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80',
-            url: 'projects.html'
+            desc: 'Built a Power Automate workflow to sync CRM updates into the support system, improving data accuracy and saving the support team time.',
+            img: 'PA-CRM.png',
+            url: 'crm-workflow-automation.html'
           },
           {
             id: 3,
-            title: 'QA test automation for integration releases',
-            category: 'qa',
-            categoryLabel: 'QA',
-            tags: ['QA', 'Test automation', 'Jira'],
+            title: 'Azure Logic Apps Integrating 2 systems',
+            category: 'logicapps',
+            categoryLabel: 'Logic Apps',
+            tags: ['Logic Apps', 'Azure', 'Integration'],
             year: '2024',
-            desc: 'Led QA for integration deployments, created regression suites, and reduced post-release defects by over 40%.',
-            img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=700&q=80',
-            url: 'projects.html'
+            desc: 'Designed an end-to-end Logic Apps solution for event based messages, error handling, and notifications across two systems.',
+            img: 'LogicApp.png',
+            url: 'logic-apps-integration.html'
           },
           {
             id: 4,
-            title: 'End-to-end business process automation',
-            category: 'automation',
-            categoryLabel: 'Automation',
-            tags: ['Automation', 'Flow', 'Monitoring'],
+            title: 'Quality Assurance for software releases',
+            category: 'qa',
+            categoryLabel: 'QA',
+            tags: ['QA', 'Test automation', 'Release'],
             year: '2024',
-            desc: 'Delivered a cross-system automation solution that linked CRM, ERP, and email alerts for a finance team.',
-            img: 'https://images.unsplash.com/photo-1581472723648-909f4851d4ae?w=700&q=80',
-            url: 'projects.html'
+            desc: 'Managed QA for multi-releases, including test planning, regression suites, and defect management.',
+            img: 'QA.png',
+            url: 'qa-software-releases.html'
           },
         ],
 
